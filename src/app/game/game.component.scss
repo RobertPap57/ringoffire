@@ -1,0 +1,53 @@
+.field {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./../../assets/img/field5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    background-blend-mode: overlay;
+
+}
+
+.card-stack {
+    position: relative;
+    width: 200px;
+    height: 280px;
+
+    img {
+        position: absolute;
+        width: 200px;
+        filter: drop-shadow(0px 0px 0.25px black);
+    }
+}
+
+.top-card {
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.1) translateY(-16px) translateX(-12px);	
+
+    }
+}
+
+.pick-card {
+    transition: all 125ms ease-in-out;
+    animation: pick-card-animation 2s ease-in-out infinite;
+}
+
+@keyframes pick-card-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.7);
+    }
+    100% {
+        transform: scale(1.7) translateX(50px);
+    }
+}
