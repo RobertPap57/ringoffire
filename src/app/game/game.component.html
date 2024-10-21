@@ -1,12 +1,30 @@
+<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': 50 + (i * 80),}" [name]="player"
+    class="player-position"></app-player>
+
 <div class="field">
     <div class="card-stack">
+
+        <!-- stack for cards -->
         <img [ngStyle]="{'transform': 'rotate(' + (i * 0) + 'deg)',
          'right.px': i * 3,
-         'bottom.px': i * 3}"
-         *ngFor="let card of [0, 1, 2, 3]; let i = index" 
-        src="/assets/img/cards/card_cover.png" alt="">
-        <img (click)="takeCard()" class="top-card" style="right: 12px; bottom: 12px" src="/assets/img/cards/card_cover.png" alt="">
-        <img *ngIf="pickCardAnimation" class="top-card pick-card" style="right: 12px; bottom: 12px" src="/assets/img/cards/heart_1.png" alt="">
-    </div>
+         'bottom.px': i * 3}" *ngFor="let card of [0, 1, 2, 3]; let i = index" src="/assets/img/cards/card_cover.png"
+            alt="">
 
+        <!-- top card -->
+        <img (click)="takeCard()" class="top-card" style="right: 12px; bottom: 12px"
+            src="/assets/img/cards/card_cover.png" alt="">
+
+        <!-- stack for played cards -->
+        <img *ngFor="let card of game.playedCards; let j = index" class="played-card"
+            src="/assets/img/cards/{{ card }}.png" alt="">
+
+        <!-- picked card -->
+        <img *ngIf="pickCardAnimation" class="pick-card" style="right: 12px; bottom: 12px"
+            src="/assets/img/cards/{{ currentCard }}.png" alt="">
+
+    </div>
 </div>
+
+<!-- <button mat-fab class="add-btn" (click)="openDialog()" aria-label="Example icon button with a delete icon">
+    <mat-icon>add</mat-icon>
+</button> -->
