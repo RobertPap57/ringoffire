@@ -1,4 +1,4 @@
-import {Component, inject,} from '@angular/core';
+import {Component, inject, HostListener} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {
   MatDialog,
@@ -33,10 +33,24 @@ import { GameInfoComponent} from '../game-info/game-info.component';
 })
 export class GameComponent {
   readonly dialog = inject(MatDialog);
+  playerHeight: number = 50;
 
   pickCardAnimation = false;
   currentCard: string = '';
   game!: Game;
+
+  constructor() {
+    this.updateTopSpacing(window.innerWidth); // Initialize based on current width
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.updateTopSpacing(event.target.innerWidth); // Update on resize
+  }
+
+  updateTopSpacing(width: number) {
+    this.playerHeight = width < 768 ? 40 : 50; // Set spacing based on screen width
+  }
 
   ngOnInit(): void {
     this.newGame();

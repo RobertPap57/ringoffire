@@ -1,30 +1,44 @@
 .start-screen {
-    background-color: black;
+    background-image: url(./../../assets/img/radial.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100vw;
     height: 100vh;
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+ 
+}
+.start-screen-container {
+    position: relative;
+    width: 40vw;
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
-        height: 60vh;
+        width: 100%;
         border-radius:10%;
+        box-shadow: 0 0 10px black;
     }
-
 }
 
 .start-button {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 17.5vh;
+    bottom: 0px;
     display: flex;
     justify-content: center;
-
+ 
     p {
         font-weight: bold;
-        color: #F7F2CD;
+        color: #FDFFE3;
         font-size: 2.5rem;
+        
         text-shadow: 0 0 10px black;
         &:hover {
             cursor: pointer;
@@ -33,5 +47,13 @@
         }
     }
   
+
+}
+
+
+@media screen and (max-width: 800px) {
+    .start-screen-container {
+       width: 80vw;
+    }
 
 }

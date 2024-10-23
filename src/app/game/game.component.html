@@ -1,16 +1,11 @@
-<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': 50 + (i * 60),}" 
-[playerActive]="i == game.currentPlayer"
-[name]="player"
-    class="player-position"></app-player>
-
 <div class="field">
     <div class="card-stack">
 
         <!-- stack for cards -->
-        <img [ngStyle]="{'transform': 'rotate(' + (i * 0) + 'deg)',
-         'right.px': i * 3,
-         'bottom.px': i * 3}" *ngFor="let card of [0, 1, 2, 3]; let i = index" src="/assets/img/cards/card_cover.png"
-            alt="">
+        <img [ngStyle]="{
+            'right.px': i * 3,
+            'bottom.px': i * 3}" *ngFor="let card of [0, 1, 2, 3]; let i = index"
+            src="/assets/img/cards/card_cover.png" alt="">
 
         <!-- top card -->
         <img (click)="takeCard()" class="top-card" style="right: 12px; bottom: 12px"
@@ -26,6 +21,9 @@
 
     </div>
 </div>
+
+<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': 50 + (i * (playerHeight + 10)),}"
+    [playerActive]="i == game.currentPlayer" [name]="player" class="player-position"></app-player>
 
 <app-game-info [card]="currentCard"></app-game-info>
 
