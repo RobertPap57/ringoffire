@@ -48,59 +48,7 @@
     transform: scale(1) translateX(350px) translateY(-250px) rotate(10deg);
 }
 
-@keyframes pick-card-animation {
-    0% {
-        transform: scale(1.1) translateY(-16px) translateX(-12px);	
-    }
 
-    40% {
-        transform: scale(1.7);
-    }
-
-    60% {
-        transform: scale(1.7);
-    }
-
-    100% {
-        transform: scale(1) translateX(350px) translateY(-250px) rotate(10deg);
-    }
-}
-
-@keyframes pick-card-animation-800w {
-    0% {
-        transform: scale(1.1) translateY(-16px) translateX(-12px);
-    }
-
-    40% {
-        transform: scale(1.4);
-    }
-
-    60% {
-        transform: scale(1.4);
-    }
-
-    100% {
-        transform: scale(1) translateX(250px) translateY(-50px) rotate(10deg);
-    }
-}
-
-@keyframes pick-card-animation-400w {
-    0% {
-        transform: scale(1.1) translateY(-16px) translateX(-12px);
-    }
-
-    40% {
-        transform: scale(1.4);
-    }
-
-    60% {
-        transform: scale(1.4);
-    }
-
-    100% {
-        transform: scale(1) translateX(20px) translateY(-270px) rotate(-10deg);
-    }
-}
 
 
 .player-position {

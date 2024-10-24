@@ -62,7 +62,7 @@ export class GameComponent {
   }
 
   takeCard() {
-    if (!this.pickCardAnimation) {
+    if (!this.pickCardAnimation && this.game.players.length > 0) {
       this.currentCard = this.game.stack.pop() || '';
       this.pickCardAnimation = true
       console.log(this.game);
